@@ -11,13 +11,13 @@ class Contact(models.Model):
     age = models.IntegerField(default=0)
     email = models.EmailField()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
-
-class Tag(models.Model):
-    contact = models.ForeignKey(Contact)
-    name = models.CharField(max_length=50)
-
-    def __unicode__(self):
-        return self.name
+#
+# class Tag(models.Model):
+#     id = models.ForeignKey(Contact)
+#     name = models.CharField(max_length=50)
+#
+#     def __str__(self):
+#         return self.name
