@@ -1,3 +1,4 @@
+# cookies
 import requests
 
 files={'file':open('favicon.ico','rb')}
