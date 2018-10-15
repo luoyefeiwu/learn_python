@@ -16,3 +16,12 @@ for item in items:
     file.write('\n'.join([question, author, answer]))
     file.write('\n' + '=' * 50 + '\n')
     file.close()
+
+print('---------wth as 语法--------------')
+for item in items:
+    question = item.find('h2').text()
+    author = item.find('.author-link-line')
+    answer = pq(item.find('.content').html()).text()
+    with open('explore.txt', 'w', encoding='utf-8') as file:
+        file.write('\n'.join([question, author, answer]))
+        file.write('\n' + '=' * 50 + '\n')
