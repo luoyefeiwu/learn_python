@@ -1,6 +1,6 @@
 class Rule:
     """
-    所有规则的基类
+    所有规则的基类.
     """
 
     def action(self, block, handler):
@@ -12,9 +12,9 @@ class Rule:
 
 class HeadingRule(Rule):
     """
-    标题只包含一行，不超过70个字符且不以冒号结尾
+    标题只包含一行,不超过70个字符且不以冒号结尾.
     """
-    typ = 'heading'
+    type = 'heading'
 
     def condition(self, block):
         return not '\n' in block and len(block) <= 70 and not block[-1] == ':'
@@ -22,7 +22,7 @@ class HeadingRule(Rule):
 
 class TitleRule(HeadingRule):
     """
-    题目是文档中的第一个文本块，前提条件是她属于标题
+    题目是文档中的第一个文本块，前提条件是它属于标题.
     """
     type = 'title'
     first = True
@@ -35,7 +35,7 @@ class TitleRule(HeadingRule):
 
 class ListItemRule(Rule):
     """
-    列表项是以连接字符串打头的段落。在设置格式的过程中，将把连字符删除
+    列表项是以连字符打头的段落。在设置格式的过程中，将把连字符删除.
     """
     type = 'listitem'
 
@@ -51,7 +51,7 @@ class ListItemRule(Rule):
 
 class ListRule(ListItemRule):
     """
-    列表以紧跟在非列表项文本块后面的列表项打头，以相连的最后一个列表结束
+    列表以紧跟在非列表项文本块后面的列表项打头，以相连的最后一个列表项结束.
     """
     type = 'list'
     inside = False
@@ -71,9 +71,9 @@ class ListRule(ListItemRule):
 
 class ParagraphRule(Rule):
     """
-    段落是不符合其他规则的文本块
+    段落是不符合其他规则的文本块.
     """
-    type = 'paragrap'
+    type = 'paragraph'
 
     def condition(self, block):
         return True
