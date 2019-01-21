@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'df_user',
+    'df_goods',
+    'tinymce'
 ]
 
 MIDDLEWARE = [
@@ -120,3 +122,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# 开发阶段 上传文件目录
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
+# 部署后的上传文件目录
+# MEDIA_ROOT = os.path.join('/var/www/learnDjango/static')
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'width': 600,
+    'height': 400,
+}
