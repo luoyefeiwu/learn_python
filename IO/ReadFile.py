@@ -1,9 +1,9 @@
+from IO.OperateFile import OperateFile
 
 
+def main():
+    file = OperateFile('test.txt')
+    file.openFile()
+    file.withFile()
 
-try:
-    f = open('test.txt', 'r', encoding='utf-8')
-    print(f.read())
-finally:
-    if f:
-        f.close()
+main()

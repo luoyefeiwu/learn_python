@@ -4,7 +4,8 @@ class OperateFile(object):
 
     def openFile(self):
         try:
-            f = open(self.filePath, 'r', encoding='utf-8')
+            f = open(self.filePath, 'w+', encoding='utf-8')
+            f.write('大侠')
         finally:
             if f:
                 f.close()
