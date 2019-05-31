@@ -1,14 +1,25 @@
 from django.shortcuts import render, redirect
+from django.http.response import JsonResponse
 from .models import *
 from hashlib import sha1
 
 
 # Create your views here.
 def register(request):
+    """
+    注册页面
+    :param request:
+    :return:
+    """
     return render(request, 'df_user/register.html')
 
 
 def register_handle(request):
+    """
+    用户注册操作
+    :param request:
+    :return:
+    """
     # 接收用户输入
     post = request.POST
     uname = post.get('user_name')
@@ -30,3 +41,46 @@ def register_handle(request):
     user.save()
     # 注册成功,跳转到登录页
     return redirect('/user/login/')
+
+
+def register_exist(request):
+    """
+    用户名是否存在
+    :param request:
+    :return:
+    """
+    get = request.GET
+    uname = get.get('uanme')
+    return JsonResponse(UserInfo().objects.filter(uname=uname).count())
+
+
+def login(request):
+    """
+    登录页面
+    :param request:
+    :return:
+    """
+    return render(request, 'df_user/login.html')
+
+
+def login_handle(request):
+    """
+    登录操作
+    :param request:
+    :return:
+    """
+    post = request.POST
+    uname = post.get('username')
+    upwd = post.get('pwd')
+    userinfo = UserInfo().objects.filter(uname=uname);
+
+    return redirect('/user/user_center_info')
+
+
+def user_center_info(request):
+    """
+    用户中心页面
+    :param request:
+    :return:
+    """
+    return render(request, 'df_user/user_center_info.html')
