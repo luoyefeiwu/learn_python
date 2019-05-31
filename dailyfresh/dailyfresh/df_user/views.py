@@ -55,11 +55,6 @@ def register_exist(request):
 
 
 def login(request):
-    """
-    登录页面
-    :param request:
-    :return:
-    """
     return render(request, 'df_user/login.html')
 
 
@@ -73,7 +68,6 @@ def login_handle(request):
     uname = post.get('username')
     upwd = post.get('pwd')
     userinfo = UserInfo().objects.filter(uname=uname);
-
     return redirect('/user/user_center_info')
 
 
@@ -83,4 +77,13 @@ def user_center_info(request):
     :param request:
     :return:
     """
-    return render(request, 'df_user/user_center_info.html')
+    # 接收用户输入
+    post = request.POST
+    uname = post.get('username')
+    upwd = post.get('pwd')
+    s1 = sha1()
+    s1.update(upwd.encode('utf-8'))
+    upwd3 = s1.hexdigest()
+
+    # 登录成功跳转到用户中心
+    return redirect('/user/user_center_info/')

@@ -52,8 +52,7 @@ $(function () {
                     $('#user_name').next().html('用户名已经存在').hide();
                     error_name = false;
                 }
-            })
-
+            }
         }
     }
 
