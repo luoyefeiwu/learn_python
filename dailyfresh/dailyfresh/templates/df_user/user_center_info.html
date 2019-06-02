@@ -1,5 +1,9 @@
 {% extends 'base_foot.html' %}
+{% block head %}
+<script type="text/javascript">
 
+</script>
+{% endblock head %}
 {% block body %}
 
 <div class="header_con">
@@ -7,7 +11,7 @@
         <div class="welcome fl">欢迎来到天天生鲜!</div>
         <div class="fr">
             <div class="login_info fl">
-                欢迎您：<em>张 山</em>
+                欢迎您：<em>{{user_name}}</em>
             </div>
             <div class="login_btn fl">
                 <a href="login.html">登录</a>
