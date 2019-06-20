@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 Django settings for dailyfresh project.
 
@@ -20,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7*aa=5ny97ffpl_n%f&iw0yg6li*sscu(-cbyixtoc+q%6@&)*'
+SECRET_KEY = 'f&zippuh=_9yn83h#2jy@#9@=4!8cxmuzndc9ko7c7f5&#caek'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,9 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'df_user',
     'df_goods',
-    'tinymce',
+    'df_user',
+    'df_cart',
+    'tinymce',  # 使用富文本编辑框要在settings文件中安装
 ]
 
 MIDDLEWARE = [
