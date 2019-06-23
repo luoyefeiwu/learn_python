@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from .models import *
+from df_cart.models import CartInfo
 
 
 def index(request):
     # 查询各个分类的最新4条，最热4条数据
     typelist = TypeInfo.objects.all()
+    print(TypeInfo)
     # _set 连表操作
     type0 = typelist[0].goodsinfo_set.order_by('-id')[0:4]  # 按照上传顺序
     type01 = typelist[0].goodsinfo_set.order_by('-gclick')[0:4]  # 按照点击量

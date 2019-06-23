@@ -18,5 +18,6 @@ from django.urls import path, re_path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^user/', include('df_user.urls'))
+    re_path(r'^', include('df_goods.urls', namespace='df_goods')),
+    re_path(r'^user/', include('df_user.urls', namespace='df_user')),
 ]

@@ -1,21 +1,20 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="/static/js/slide.js"></script>
+<script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/js/slide.js"></script>
 {% endblock head %}
 
 {% block center_body %}
-
 	<div class="navbar_con">
 		<div class="navbar">
 			<h1 class="fl">全部商品分类</h1>
 			<ul class="navlist fl">
-				<li><a href="{% url "df_goods:index" %}">首页</a></li>
+				<li><a href="">首页</a></li>
 				<li class="interval">|</li>
-				<li><a href="#">手机生鲜</a></li>
+				<li><a href="">手机生鲜</a></li>
 				<li class="interval">|</li>
-				<li><a href="#">抽奖</a></li>
+				<li><a href="">抽奖</a></li>
 			</ul>
 		</div>
 	</div>
@@ -51,34 +50,36 @@
 			<h3 class="fl" id="model01">新鲜水果</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-{#				<a href="#">鲜芒</a>#}
-{#				<a href="#">加州提子</a>#}
-{#				<a href="#">亚马逊牛油果</a>#}
-                {% for g in type01 %}
-                    <a href="/{{ g.id }}/">{{  g.gtitle|slice:'10' }}</a>
-{#                    这里建立一个点击量前四位的商品的链接#}
-{#                    模板过滤器slice, 取变量前 N 个字符，可用于中文 #}
-                {%  endfor %}
+				<a href="#">鲜芒</a>
+				<a href="#">加州提子</a>
+				<a href="#">亚马逊牛油果</a>
 			</div>
-			<a href="/list1_1_1/" class="goods_more fr" id="fruit_more">查看更多 ></a>
+			<a href="#" class="goods_more fr" id="fruit_more">查看更多 ></a>
 		</div>
 
 		<div class="goods_con clearfix">
 			<div class="goods_banner fl"><img src="/static/images/banner01.jpg"></div>
 			<ul class="goods_list fl">
-{#				<li>#}
-{#					<h4><a href="#">草莓</a></h4>#}
-{#					<a href="#"><img src="/static/df_goods/goods003.jpg"></a>#}
-{#					<div class="prize">¥ 30.00</div>#}
-{#				</li>#}
-                {% for goods in type0 %}
-{#                    按照商品的最新上穿建立显示#}
-                <li>
-                    <h4><a href="/{{ goods.id }}/">{{ goods.gtitle }}</a></h4>
-                    <a href="/{{ goods.id }}/"><img src="{{ MEDIA_URL }}{{ goods.gpic }}"></a>
-                    <div class="prize"> ￥ {{ goods.gprice }} </div>
-                </li>
-                {% endfor %}
+				<li>
+					<h4><a href="#">草莓</a></h4>
+					<a href="#"><img src="/static/images/goods/goods003.jpg"></a>
+					<div class="prize">¥ 30.00</div>
+				</li>
+				<li>
+					<h4><a href="#">葡萄</a></h4>
+					<a href="#"><img src="/static/images/goods/goods002.jpg"></a>
+					<div class="prize">¥ 5.50</div>
+				</li>
+				<li>
+					<h4><a href="#">柠檬</a></h4>
+					<a href="#"><img src="/static/images/goods/goods001.jpg"></a>
+					<div class="prize">¥ 3.90</div>
+				</li>
+				<li>
+					<h4><a href="#">奇异果</a></h4>
+					<a href="#"><img src="/static/images/goods/goods012.jpg"></a>
+					<div class="prize">¥ 25.80</div>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -88,26 +89,35 @@
 			<h3 class="fl" id="model02">海鲜水产</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-{#				<a href="#">河虾</a>#}
-{#				<a href="#">扇贝</a>				#}
-                {% for g in type1 %}
-                    <a href="/{{ g.id }}/">{{ g.gtitle|slice:'10' }}</a>
-                {% endfor %}
+				<a href="#">河虾</a>
+				<a href="#">扇贝</a>				
 			</div>
-			<a href="/list2_1_1/" class="goods_more fr">查看更多 ></a>
+			<a href="#" class="goods_more fr">查看更多 ></a>
 		</div>
 
 		<div class="goods_con clearfix">
 			<div class="goods_banner fl"><img src="/static/images/banner02.jpg"></div>
 			<ul class="goods_list fl">
-                {% for goods in type11 %}
-                <li>
-                    <h4><a href="/{{ goods.id }}/">{{ goods.gtitle }}</a></h4>
-                    <a href="/{{ goods.id }}/"><img src="{{ MEDIA_URL }}{{ goods.gpic }}"></a>
-{#                    静态文件添加目录static前一定加"/"#}
-                    <div class="prize"> ￥ {{ goods.gprice }} </div>
-                </li>
-                {% endfor %}
+				<li>
+					<h4><a href="#">青岛野生海捕大青虾</a></h4>
+					<a href="#"><img src="/static/images/goods/goods018.jpg"></a>
+					<div class="prize">¥ 48.00</div>
+				</li>
+				<li>
+					<h4><a href="#">扇贝</a></h4>
+					<a href="#"><img src="/static/images/goods/goods019.jpg"></a>
+					<div class="prize">¥ 46.00</div>
+				</li>
+				<li>
+					<h4><a href="#">冷冻秋刀鱼</a></h4>
+					<a href="#"><img src="/static/images/goods/goods020.jpg"></a>
+					<div class="prize">¥ 19.00</div>
+				</li>
+				<li>
+					<h4><a href="#">基围虾</a></h4>
+					<a href="#"><img src="/static/images/goods/goods021.jpg"></a>
+					<div class="prize">¥ 25.00</div>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -149,7 +159,6 @@
 				</li>
 			</ul>
 		</div>
-
 	</div>
 
 	<div class="list_model">
@@ -269,22 +278,22 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="/static/js/slide.js"></script>
-    <script type="text/javascript">
-        BCSlideshow('focuspic');
-        var oFruit = document.getElementById('fruit_more');
-        var oShownum = document.getElementById('show_count');
 
-        var hasorder = localStorage.getItem('order_finish');
 
-        if(hasorder)
-        {
-        oShownum.innerHTML = '2';
-        }
+	<script type="text/javascript">
+		BCSlideshow('focuspic');
+		var oFruit = document.getElementById('fruit_more');
+		var oShownum = document.getElementById('show_count');
 
-        oFruit.onclick = function(){
-        window.location.href = 'list.html';
-        }
-    </script>
+		var hasorder = localStorage.getItem('order_finish');
 
+		if(hasorder)
+		{
+			oShownum.innerHTML = '2';
+		}
+
+		oFruit.onclick = function(){
+			window.location.href = 'list.html';
+		}
+	</script>
 {% endblock center_body %}
