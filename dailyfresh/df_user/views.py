@@ -1,7 +1,7 @@
 from hashlib import sha1
 
 from django.http.response import JsonResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 
 from .models import *
 
@@ -127,3 +127,8 @@ def user_center_site(request):
         user.save()
     context = {'title': '用户中心', 'user': user}
     return render(request, 'df_user/user_center_site.html', context)
+
+
+def logout(request):
+    request.session.flush()  # 清空当前用户所有session
+    return redirect(reverse("df_goods:index"))
