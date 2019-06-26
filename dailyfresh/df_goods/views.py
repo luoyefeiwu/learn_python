@@ -39,3 +39,15 @@ def index(request):
     }
 
     return render(request, 'df_goods/index.html', context)
+
+
+def ordinary_search(request):
+    context = {
+        'title': '搜索列表',
+        'search_status': 'search_status',
+        'guest_cart': 'guest_cart',
+        'cart_num': 'cart_num',
+        'page': 'page',
+        'paginator': 'paginator',
+    }
+    return render(request, 'df_goods/ordinary_search.html')
