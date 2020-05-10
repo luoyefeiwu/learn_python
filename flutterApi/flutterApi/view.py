@@ -75,7 +75,6 @@ def homePageContent(request):
                     "image": "http://192.168.3.8:8000/images/hot1.jpg",
                     "malPrice": 100,
                     "price": 200
-
                 },
                 {
                     "image": "http://192.168.3.8:8000/images/hot2.jpg",
@@ -88,7 +87,28 @@ def homePageContent(request):
                     "price": 400
                 },
 
-            ]
+            ],
+            "floor1Pic": {
+                "PICURE_ADDRESS": "http://192.168.3.8:8000/images/floor1.jpg"
+            },
+            "floor1": [
+                {"image": "http://192.168.3.8:8000/images/floor2.jpg"},
+                {"image": "http://192.168.3.8:8000/images/floor3.jpg"},
+                {"image": "http://192.168.3.8:8000/images/floor4.jpg"},
+                {"image": "http://192.168.3.8:8000/images/floor5.jpg"},
+                {"image": "http://192.168.3.8:8000/images/floor6.jpg"},
+
+            ],
         }
     }
+    return JsonResponse(data)
+
+
+def homePageBelowten(request):
+    data = {"data": [
+        {"image": "http://192.168.3.8:8000/images/floor2.jpg", "name": "iphone7", "mallPrice": 100, "price": 90},
+        {"image": "http://192.168.3.8:8000/images/floor2.jpg", "name": "iphone8", "mallPrice": 100, "price": 90},
+        {"image": "http://192.168.3.8:8000/images/floor2.jpg", "name": "iphone9", "mallPrice": 100, "price": 90},
+        {"image": "http://192.168.3.8:8000/images/floor2.jpg", "name": "iphone10", "mallPrice": 100, "price": 90},
+    ]}
     return JsonResponse(data)

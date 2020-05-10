@@ -20,4 +20,5 @@ from .view import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^wxmini/homePageContent/$', homePageContent),
+    re_path(r'^wxmini/homePageBelowten/$', homePageBelowten),
 ]
