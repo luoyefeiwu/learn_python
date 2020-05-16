@@ -23,4 +23,5 @@ urlpatterns = [
     re_path(r'^wxmini/homePageBelowten/$', homePageBelowten),
     re_path(r'^wxmini/getCategory/$', getCategory),
     re_path(r'^wxmini/getMallGoods/$', getMallGoods),
+    re_path(r'^wxmini/getGoodDetailById/$', getGoodDetailById),
 ]
