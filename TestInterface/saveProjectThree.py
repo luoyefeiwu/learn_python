@@ -76,7 +76,7 @@ with open("cookies.txt", 'r') as file:
         name, value = line.strip().split('=', 1)
         cookies[name] = value
 
-requests = requests.post('http://localhost:8081/ydyl/submit/saveProjectTwo', data=json.dumps(data),
+requests = requests.post('http://localhost:8081/ydyl/submit/saveProjectThree', data=json.dumps(data),
                          headers=headers,
                          cookies=cookies);
 
